@@ -3,14 +3,17 @@ set :use_sudo, :false
 set :application, "quinn.ie"
 set :repository,  "."
 set :scm, :git
-set :scm_user, "andy"
 set :deploy_via, :copy
 set :branch, "master"
 set :deploy_to, "/home/andy/public_html/#{application}"
 #set :deploy_env, 'production'
 set :app_server, :passenger
-set :runner, "deploy"
 #set :server_name. "quinn.ie"
+
+task :fix_permissions do
+   run "sudo chown -R andy:andy /home/andy/public_html" 
+end
+after("deploy:setup", "fix_permissions")
 
 task :production do
    role :web, "quinn.ie"
