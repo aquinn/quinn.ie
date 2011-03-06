@@ -1,19 +1,35 @@
 !!! 5
 %html
   %head
-    %meta{:name => "robots", :content => "noindex" }
-    %title Andy Quinn
+    %link{:rel=>"shortcut icon", :href=>"/favicon.ico", :type=>"image/x-icon"}
+    %meta{:content => "Website design and development. Web application and mobile app development.", :name=> "description" }
+    %meta{:content => "follow, index", :name => "robots"}
+    %meta{:content => "quinnweb", :property => "fb:admins"}
+    %meta{:content => "Quinn Web Development", :property => "og:title"}
+    %meta{:content => "website", :property => "og:type"}
+    %meta{:content => "Quinn Web Development", :property => "og:site_name"}
+    %meta{:content => "http://www.quinn.ie", :property => "og:url"}
+    %meta{:content => "http://www.quinn.ie/images/logo-og.png", :property => "og:image"}
+    %meta{:content => "Website design and development. Web application and mobile app development.", :property => "og:description"}
+    %title Quinn.ie
     %link{:rel=>'stylesheet', :href=>'/stylesheets/style.css', :type => "text/css"}  
+    %link{:rel=>'stylesheet', :href=>'http://fonts.googleapis.com/css?family=Bevan:regular', :type => "text/css"}
+    %link{:rel=>'stylesheet', :href=>'http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911:regular', :type => "text/css"}
   %body
-    #fortune
-      %p 
-        Fortune: = fortune
-    %p
-      %a{:href => "http://www.twitter.com/andyquinn"}
-        Twitter
-    %p
-      %a{:href => "http://www.github.com/aquinn"}
-        Github
-    %p
-      %a{:href => "http://www.youtube.com/watch?v=jZeVlVcDC5k"}
-        Workinonit!
+    #header
+      %h1 Andy Quinn
+      %p{:class=>'tagline'} Freelance Web Developer
+      #nav
+        %ul
+          %li
+            %a{:href=>'/about'} About
+          %li 
+            %a{:href => "http://www.twitter.com/andyquinn"} Twitter
+          %li
+            %a{:href => "http://www.github.com/aquinn"} Github
+    #content
+      %p lol
+    #footer
+      %p
+        %a{:href => "http://www.youtube.com/watch?v=jZeVlVcDC5k"}
+          Workinonit!
