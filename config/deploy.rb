@@ -1,14 +1,16 @@
 set :application, "quinn.ie"
-set :repository,  "."
+set :repository,  "git@github.com:aquinn/quinn.ie"
 set :server_name, "109.74.198.151"
 set :scm, :git
-set :deploy_via, :export
+set :deploy_via, :remote_cache
+set :git_shallow_clone, 1
 set :branch, "master"
 set :deploy_to, "/home/aquinn/public_html/#{application}"
 set :user, 'aquinn'
 set :app_server, :passenger
 set :use_sudo, false
 set :stage, :production
+set :scm_verbose, true
 
 role :web, server_name                          # Your HTTP server, Apache/etc
 role :app, server_name                         # This may be the same as your `Web` server
