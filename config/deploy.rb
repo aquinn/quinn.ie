@@ -2,7 +2,7 @@ set :application, "quinn.ie"
 set :repository,  "."
 set :server_name, "aquinn.net"
 set :scm, :git
-set :deploy_via, :copy
+set :deploy_via, :export
 set :branch, "master"
 set :deploy_to, "/home/aquinn/public_html/#{application}"
 set :user, 'aquinn'
