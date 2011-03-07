@@ -1,21 +1,43 @@
 require 'rubygems'
 require 'sinatra'
 
-#set :environment, :production
-#set :run, false
-
+require 'pony'
 require 'haml'
+require 'yaml'
+
+
 
 get '/' do
-   # grab from polish, irish and german fortunes
-   #fortune = `/usr/games/fortune -aes pl de ga`
-   haml :index #, :locals => {:fortune => fortune }
+   haml :index 
 end 
 
-get '/about' do
-   lol
-end
 
 get '/stylesheets/style.css' do
    sass :style
 end
+
+
+post '/comment' do
+	$this_dir = Pathname.new(File.dirname(__FILE__))
+	Yml = YAML.load_file "config/config.yml"
+	name = params[:name]
+	email = params[:email]
+	comment = params[:comment]
+	phone = params[:phone]
+	Pony.mail(
+	:to => 'andy@quinn.ie',
+	:from => "#{email}",
+	:subject => "Website query from #{name}", 
+	:body => "Phone no: #{phone} -- Query: #{comment}",
+	:via => :smtp, 
+	:via_options => {
+			:address        => "smtp.sendgrid.net",
+			:port           => "25",
+			:authentication => :plain,
+			:user_name      => Yml['sendgrid']['user_name'],
+			:password       => Yml['sendgrid']['password'],
+			:domain         => 'quinn.ie'
+	})
+	redirect '/'
+end
+

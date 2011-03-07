@@ -1,6 +1,7 @@
 !!! 5
 %html
   %head
+    %meta{:charset=>"utf8"}
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico", :type=>"image/x-icon"}
     %meta{:content => "Website design and development. Web application and mobile app development.", :name=> "description" }
     %meta{:content => "follow, index", :name => "robots"}
@@ -11,25 +12,94 @@
     %meta{:content => "http://www.quinn.ie", :property => "og:url"}
     %meta{:content => "http://www.quinn.ie/images/logo-og.png", :property => "og:image"}
     %meta{:content => "Website design and development. Web application and mobile app development.", :property => "og:description"}
+
     %title Quinn.ie
+
+    %script{:type => "text/javascript",:src  => 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'}
+    %script{:type => "text/javascript",:src  => '/javascripts/jquery-validate-min.js'}
+    %script{:type => "text/javascript",:src  => '/javascripts/skypeCheck.js'}
+    %script{:type => "text/javascript",:src  => '/javascripts/app.js'}
     %link{:rel=>'stylesheet', :href=>'/stylesheets/style.css', :type => "text/css"}  
     %link{:rel=>'stylesheet', :href=>'http://fonts.googleapis.com/css?family=Bevan:regular', :type => "text/css"}
     %link{:rel=>'stylesheet', :href=>'http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911:regular', :type => "text/css"}
   %body
-    #header
-      %h1 Andy Quinn
-      %p{:class=>'tagline'} Freelance Web Developer
-      #nav
-        %ul
-          %li
-            %a{:href=>'/about'} About
-          %li 
-            %a{:href => "http://www.twitter.com/andyquinn"} Twitter
-          %li
-            %a{:href => "http://www.github.com/aquinn"} Github
-    #content
-      %p lol
-    #footer
-      %p
-        %a{:href => "http://www.youtube.com/watch?v=jZeVlVcDC5k"}
-          Workinonit!
+    %header
+      %hgroup 
+        %h1 Andy Quinn
+        %h2 Freelance Web Developer
+    %article
+      %header
+        %h1 Services
+        %p
+          %ul
+            %li
+              Complete website design and development
+              %p
+                Get your business online quickly. I work with designers locally or if you already have a design I can develop and host it for you. I'll take care of all the details and it doesn't have to cost you an arm and a leg.
+            %li
+              Mobile applications
+              %p 
+                Got an app idea? Want your website to run as an app? I can build an app for you that will work on all major smartphones and the iPad using the 
+                %a{:href => "http://www.phonegap.com"} Phonegap 
+                platform
+        %p
+          Sometimes you're not exactly sure what you want. I work fast and don't mind throwing away ideas and starting from scratch. I'm a fan of the Agile way of working where customer and developer are in regular communication. Pace of development is rapid and risk is low.
+          
+    %article
+      %header
+        %h1 About your Developer
+        %p
+          Andy is based in Galway city and graduated from GMIT in 2005 with an honours B.Eng in Digital and Software Systems. He'll get a masters if he ever hands in his thesis. he's also writing this himself but talking in the third person. Strange.
+        %p
+          Find me on Skype - see if i'm online below.
+        %p
+          Or send me an email with the form below or at andy@quinn.ie
+        %p
+          Working to bring samples of work and client feedback up soon.
+
+    %footer
+      .left
+        %iframe{:allowTransparency => "true", :frameborder => "0", :scrolling => "no", :src => "http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.quinn.ie&layout=button_count&show_faces=false&width=50&action=like&colorscheme=light&height=21", :style => "border:none; overflow:hidden; width:50px; height:21px;"}
+        %br
+        %a{:href => "http://www.twitter.com/andyquinn"}
+          %img{:alt => "Follow Andy Quinn on Twitter", :src => "http://twitter-badges.s3.amazonaws.com/follow_me-a.png"}
+        %br
+        %a{:href => "skype:andy_quinn?chat"}
+          %img{:src=>'http://mystatus.skype.com/balloon/andy_quinn', :width=>'150', :height => '60', :alt=>'My Status'}
+        %p
+      .right
+        .face
+          %img{:src=>'/images/andy.jpg', :width=>'120', :height => '120', :alt=>'Andy Quinn'}
+      .contact
+        %form{:id=>"commentForm", :class=>"cmxform", :action => "/comment", :method => "post"}
+          %table
+            #name
+              %tr
+                %td
+                  %label{:for => "name"} Name
+                %td
+                  %input{:id=>"name", :class=>"required",:name => "name", :type => "text"}
+                %td
+            .email
+              %tr
+                %td
+                  %label{:for => "email"} Email
+                %td
+                  %input{:id=>"email", :class=>"required",:name => "email", :type => "text"}
+            .phone
+              %tr
+                %td
+                  %label{:for => "phone"} Phone/SkypeID
+                %td
+                  %input{:id=>"phone",:name => "phone", :type => "text"}
+                %td
+            .comment
+              %tr
+                %td Make a comment..
+              %tr
+                %td{:align => "left", :colspan => "3"}
+                  %textarea{:id=>"comment", :class=>"required",:cols => "30", :name => "comment", :rows => "8"}
+            .send
+              %tr
+                %td{:align => "left", :colspan => "3"}
+                  %input{:id=>"submit",:name => "submit", :type => "submit", :value => "Send"}
