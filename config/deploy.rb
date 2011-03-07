@@ -1,40 +1,29 @@
-set :user, "andy"
-set :use_sudo, :false
 set :application, "quinn.ie"
 set :repository,  "."
+set :server_name, "aquinn.net"
 set :scm, :git
 set :deploy_via, :copy
 set :branch, "master"
-set :deploy_to, "/home/andy/public_html/#{application}"
-#set :deploy_env, 'production'
+set :deploy_to, "/home/aquinn/public_html/#{application}"
+set :user, 'aquinn'
 set :app_server, :passenger
-#set :server_name. "quinn.ie"
+set :use_sudo, false
+set :stage, :production
 
-task :fix_permissions do
-   run "sudo chown -R andy:andy /home/andy/public_html" 
-end
-after("deploy:setup", "fix_permissions")
+role :web, server_name                          # Your HTTP server, Apache/etc
+role :app, server_name                         # This may be the same as your `Web` server
+role :db,  server_name, :primary => true # This is where Rails migrations will run
 
-task :production do
-   role :web, "quinn.ie"
-   role :app, "quinn.ie"
-   role :db, "quinn.ie", :primary => true
-end
+# If you are using Passenger mod_rails uncomment this:
+# if you're still using the script/reapear helper you will need
+# these http://github.com/rails/irs_process_scripts
+#default_run_options[:pty] = true 
 
-task :staging do
-   role :web, "192.168.2.4"
-   role :app, "192.168.2.4"
-   role :db, "192.168.2.4", :primary => true
-end
 
-default_run_options[:pty] = true
-
-namespace :deploy do
+namespace :passenger do
+   desc "Restart Application"
    task :restart do
-      run "touch #{deploy_to}/tmp/restart.txt"
-   end
-
-   task :start do
-      run "touch #{deploy_to}/tmp/restart.txt"
+      run "touch #{current_path}/tmp/restart.txt"
    end
 end
+after :deploy, "passenger:restart"
