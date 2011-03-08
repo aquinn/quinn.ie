@@ -1,6 +1,6 @@
 set :project, "quinn.ie"
 set :application, "quinn.ie"
-set :repository,  "git@github.com:aquinn/quinn.ie"
+set :repository,  "git@github.com:aquinn/quinn.ie.git"
 set :server_name, "109.74.198.151"
 set :scm, :git
 set :deploy_via, :remote_cache
