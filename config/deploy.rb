@@ -3,7 +3,7 @@ set :application, "quinn.ie"
 set :repository,  "git@github.com:aquinn/quinn.ie.git"
 set :server_name, "109.74.198.151"
 set :scm, :git
-set :deploy_via, :remote_cache
+set :deploy_via, :copy
 set :branch, "master"
 set :deploy_to, "/home/aquinn/public_html/#{application}"
 set :user, 'aquinn'
