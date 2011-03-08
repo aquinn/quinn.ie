@@ -15,3 +15,9 @@ try {
         identify: null_fn
     };
 }
+
+var on_button_click = function() {
+    // This sends us an event every time a user clicks the button
+    mpmetrics.track("Send button clicked"); 
+};
+$("#submit").click(on_button_click);
