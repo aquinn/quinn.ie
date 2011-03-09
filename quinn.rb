@@ -1,5 +1,5 @@
-#require 'rubygems'
-#require 'sinatra'
+require 'rubygems'
+require 'sinatra'
 
 require 'pony'
 require 'haml'
@@ -16,14 +16,17 @@ get '/stylesheets/style.css' do
    sass :style
 end
 
+def strip(str)
+   return str.gsub(/<\/?[^>]*>/, "")
+end
 
 post '/comment' do
 	$this_dir = Pathname.new(File.dirname(__FILE__))
 	Yml = YAML.load_file "config/config.yml"
-	name = params[:name]
-	email = params[:email]
-	comment = params[:comment]
-	phone = params[:phone]
+	name = strip(params[:name])
+	email = strip(params[:email])
+	comment = strip(params[:comment])
+	phone = strip(params[:phone])
 	Pony.mail(
 	:to => 'andy@quinn.ie',
 	:from => "#{email}",
