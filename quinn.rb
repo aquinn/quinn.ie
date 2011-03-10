@@ -3,6 +3,7 @@ require 'sinatra'
 
 require 'pony'
 require 'haml'
+require 'sass'
 require 'yaml'
 
 
@@ -23,10 +24,10 @@ end
 post '/comment' do
 	$this_dir = Pathname.new(File.dirname(__FILE__))
 	Yml = YAML.load_file "config/config.yml"
-	name = strip(params[:name])
-	email = strip(params[:email])
+	name = params[:name]
+	email = params[:email]
 	comment = strip(params[:comment])
-	phone = strip(params[:phone])
+	phone = params[:phone]
 	Pony.mail(
 	:to => 'andy@quinn.ie',
 	:from => "#{email}",
