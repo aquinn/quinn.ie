@@ -7,7 +7,9 @@ $(document).ready(function() {
         comment: "And this"
     }
   });
+  $("#submit").ajaxbuttonindicator();
 });  
+
 
 
 
