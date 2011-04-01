@@ -1,3 +1,5 @@
+# Looks at github.com/aquinn/quinn.ie.git and copies it to linode server
+
 set :project, "quinn.ie"
 set :application, "quinn.ie"
 set :repository,  "git@github.com:aquinn/quinn.ie.git"

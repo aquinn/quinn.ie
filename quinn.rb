@@ -9,7 +9,7 @@ require 'yaml'
 
 
 get '/' do
-   haml :index 
+   haml :index
 end 
 
 
@@ -42,6 +42,6 @@ post '/comment' do
 			:password       => Yml['sendgrid']['password'],
 			:domain         => 'quinn.ie'
 	})
-	redirect '/'
+	"<p>Thanks!</p>"
 end
 

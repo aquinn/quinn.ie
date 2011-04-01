@@ -1,82 +1,63 @@
-article, header, footer, hgroup
-  display: block
-
-html
-  background: white
-  color: black
-
 body
-  width: 700px
-  margin: 0 auto
-  padding: 0
-  font-family: 'Goudy Bookletter 1911', serif
-  font-size: 26px
-  font-style: normal
-  font-weight: 400
+  margin: 20px 0 0 0
+  background-color: #323232
+  background: url('/images/bg.png') repeat
+  color: #333
 
+h1
+  font-family: 'Bevan', serif
+  font-size: 46px
+  font-style: normal
+  font-weight: 200
+
+h2
+  font-family: 'Bevan', serif
+  font-size: 35px
+  font-style: normal
+  font-weight: 200
+
+p, label
+  text-align: left
+  font-family: 'Goudy Bookletter 1911', serif
+  font-size: 22px
+  font-style: normal
+  font-weight: 200
+  margin: 0 0 20px 0
+  color: #333
 
 li
   list-style: none
   background-image: url(/images/bullet.png)
   background-repeat: no-repeat
-  background-position: 0px .2.8em
-  padding-left: 1.5em
+  background-position: 0 .2.8em
+  padding-left: 2.5em
   
-
-h1
-  color: inherit !important
-  font-family: 'Bevan', serif
-  font-size: 66px
-  font-style: normal
-  font-weight: 400
-
-h2
-  font-size: 45px
-
-article h1
-  text-align: center
-  font-size: 30px
-
-
-.left
-  width: 50%
-  float: left
-  display: inline
-
-.right
-  width: 50%
-  float: right
-  display: inline
-  text-align: left
-
-.contact
-  width: 100%
-  float: left
-
-
-
-.face img
-  -webkit-box-shadow: 3px 3px 6px #000000
-  -moz-box-shadow: 3px 3px 6px #000000
-  box-shadow: 3px 3px 6px #000000
-
-a img 
-  text-decoration: none
-  border-style: none
-
 img
   border: 0
 
 a
   target: _blank
 
-label.error 
-  color: black
-  padding-left: 3px
+a img 
+  text-decoration: none
+  border-style: none
+
+
+
+
+a:active 
+  color: red
 
 
 input
   background: white
   color: black
   border: black 1px solid
+  padding: 6px
 
+
+#response p
+  color: red
+
+#loading
+  display: none
