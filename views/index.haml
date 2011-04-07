@@ -1,5 +1,8 @@
 .row
   .column.grid_12
+    %p.extlink
+      %a{:href => "javascript:void(0);", :onclick =>"mpmetrics.track('click link', {'link item': 'quinn-direct'},function() { window.location = 'http://www.quinn-direct.com'; });" } Looking for Quinn-Direct Insurance?
+  .column.grid_12
     %h1 Andy Quinn
     %h2 Freelance Web Developer
   .column.grid_12
@@ -102,5 +105,8 @@
   .column.grid_12
     %br
     %br
-      
+:javascript
+  var mp_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://'); document.write(unescape('%3Cscript src="' + mp_protocol + 'api.mixpanel.com/site_media/js/api/mixpanel.js" type="text/javascript"%3E%3C/script%3E'));
+:javascript 
+  try {  var mpmetrics = new MixpanelLib('69f946f3e1de8cd05f784fd7f11c2002'); } catch(err) { null_fn = function () {}; var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; } 
 
