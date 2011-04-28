@@ -7,8 +7,8 @@ set :server_name, "78.47.136.194"
 set :scm, :git
 set :deploy_via, :remote_cache
 set :branch, "master"
-set :deploy_to, "/home/aquinn/public/#{application}"
-set :user, 'aquinn'
+set :deploy_to, "/home/andy/public/#{application}"
+set :user, 'andy'
 set :app_server, :passenger
 set :use_sudo, false
 set :stage, :production
