@@ -3,11 +3,11 @@
 set :project, "quinn.ie"
 set :application, "quinn.ie"
 set :repository,  "git@github.com:aquinn/quinn.ie.git"
-set :server_name, "109.74.198.151"
+set :server_name, "78.47.136.194"
 set :scm, :git
 set :deploy_via, :remote_cache
 set :branch, "master"
-set :deploy_to, "/home/aquinn/public_html/#{application}"
+set :deploy_to, "/home/aquinn/public/#{application}"
 set :user, 'aquinn'
 set :app_server, :passenger
 set :use_sudo, false
